@@ -41,11 +41,6 @@ describe "songs", type:  :feature do
       expect(page).to have_link("Daft Punk", href: artist_path(@artist))
     end
 
-    it "links to edit when no artist" do
-      song = Song.create(title: "Policy of Truth")
-      visit song_path(song)
-      expect(page).to have_link("Add Artist", href: edit_song_path(song))
-    end
 
   end
 
