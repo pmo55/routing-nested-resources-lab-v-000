@@ -3101,3 +3101,29 @@ Processing by SongsController#new as HTML
 Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/songs" for 149.142.201.3 at 2019-10-07 14:00:46 +0000
+Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OgbIIrmmNpdHtn5EZUdXhvbYs1ZZCGdK3DQ+c9HA53juvnjmqffOLui6ebkLp/594tNZ4g1moP1hlJZXRtbgoA==", "song"=>{"title"=>"", "artist_name"=>"Parsa"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Parsa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Parsa"], ["created_at", "2019-10-07 14:00:46.438552"], ["updated_at", "2019-10-07 14:00:46.438552"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "songs" ("title", "created_at", "updated_at", "artist_id") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["created_at", "2019-10-07 14:00:46.442708"], ["updated_at", "2019-10-07 14:00:46.442708"], ["artist_id", 5]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://178.128.13.85:44419/songs/9
+Completed 302 Found in 11ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/songs/9" for 149.142.201.3 at 2019-10-07 14:00:46 +0000
+Cannot render console from 149.142.201.3! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering songs/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
